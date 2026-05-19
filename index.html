@@ -1,10 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurs Kotlina - Funkcje</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    
+
+    <h1>Mini-kurs: Funkcje w Kotlinie</h1>
+
+    <section>
+        <h2>1. Teoria: Wstęp do funkcji</h2>
+        <p>Funkcje w Kotlinie to bloki kodu, które wykonują określone zadanie. Pozwalają one na organizację i wielokrotne wykorzystanie kodu.</p>
+        <ul>
+            <li><strong>Deklaracja:</strong> Do stworzenia funkcji używamy słowa kluczowego <code>fun</code>.</li>
+            <li><strong>Zwracanie wartości:</strong> Jeśli funkcja nic nie zwraca (odpowiednik <i>void</i>), domyślnie zwraca typ <code>Unit</code>.</li>
+            <li><strong>Parametry:</strong> Podajemy je w nawiasach okrągłych w formacie <code>nazwa: Typ</code>.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>2. Sprawdź wiedzę (Quiz)</h2>
+        
+        <div class="quiz-question">
+            <strong>1. Jakim słowem kluczowym deklarujemy funkcję w Kotlinie?</strong>
+            <label class="quiz-option"><input type="radio" name="q1" value="a"> function</label>
+            <label class="quiz-option"><input type="radio" name="q1" value="b"> def</label>
+            <label class="quiz-option"><input type="radio" name="q1" value="c"> fun</label>
+            <label class="quiz-option"><input type="radio" name="q1" value="d"> func</label>
+        </div>
+
+        <div class="quiz-question">
+            <strong>2. Jaki typ danych domyślnie zwraca funkcja, która "nic nie zwraca"?</strong>
+            <label class="quiz-option"><input type="radio" name="q2" value="a"> Null</label>
+            <label class="quiz-option"><input type="radio" name="q2" value="b"> Unit</label>
+            <label class="quiz-option"><input type="radio" name="q2" value="c"> Void</label>
+            <label class="quiz-option"><input type="radio" name="q2" value="d"> Any</label>
+        </div>
+
+        <div class="quiz-question">
+            <strong>3. Jak poprawnie zadeklarować parametr typu tekstowego (String)?</strong>
+            <label class="quiz-option"><input type="radio" name="q3" value="a"> name: String</label>
+            <label class="quiz-option"><input type="radio" name="q3" value="b"> String name</label>
+            <label class="quiz-option"><input type="radio" name="q3" value="c"> name -> String</label>
+            <label class="quiz-option"><input type="radio" name="q3" value="d"> var name = String</label>
+        </div>
+    </section>
+
+    <section>
+        <h2>3. Ułóż funkcję (Drag & Drop)</h2>
+        <p>Przeciągnij elementy z lewej strony na prawą we właściwej kolejności, aby utworzyć funkcję mnożącą dwie liczby (z góry na dół).</p>
+        
+        <div class="dnd-container">
+            <div class="dnd-box" id="source-zone">
+                <div class="dnd-item" draggable="true" id="drag3" data-id="3">: Int {</div>
+                <div class="dnd-item" draggable="true" id="drag1" data-id="1">fun pomnoz</div>
+                <div class="dnd-item" draggable="true" id="drag5" data-id="5">}</div>
+                <div class="dnd-item" draggable="true" id="drag4" data-id="4">&nbsp;&nbsp;return a * b</div>
+                <div class="dnd-item" draggable="true" id="drag2" data-id="2">(a: Int, b: Int)</div>
+            </div>
+            
+            <div class="dnd-box" id="target-zone">
+                <div class="dnd-placeholder">Upuść elementy tutaj w odpowiedniej kolejności:</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>4. Uzupełnij kod</h2>
+        <p>Wpisz brakujące słowa kluczowe (zwróć uwagę na małe litery i znaki), aby funkcja poprawnie dodawała liczby.</p>
+        
+        <div class="code-block">
+            <input type="text" id="blank1" class="code-input" autocomplete="off"> dodaj(a: Int, b: Int) <input type="text" id="blank2" class="code-input" style="width: 20px" autocomplete="off"> Int { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="blank3" class="code-input" autocomplete="off"> a + b <br>
+            }
+        </div>
+    </section>
+
+    <section>
+        <h2>5. Fiszki do nauki</h2>
+        <p>Kliknij na kartę, aby ją odwrócić i sprawdzić odpowiedź.</p>
+        
+        <div class="flashcards-wrapper">
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">Co oznacza typ Unit?</div>
+                    <div class="flashcard-back">Odpowiednik "void" - funkcja nie zwraca konkretnej wartości.</div>
+                </div>
+            </div>
+            
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">Funkcja jednowyrażeniowa<br>(Single-Expression)</div>
+                    <div class="flashcard-back">Np. fun dodaj(a: Int) = a + 1<br>(Bez klamer i return)</div>
+                </div>
+            </div>
+            
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">Czy parametry można zmieniać w ciele funkcji?</div>
+                    <div class="flashcard-back">Nie, domyślnie są to stałe (odpowiednik val).</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>6. Podsumowanie</h2>
+        <button class="btn-submit" id="submit-btn">Sprawdź moje odpowiedzi</button>
+        
+        <div id="wynik-container">
+            <h3 id="wynik-punkty">Twój wynik: 0 / 8 punktów</h3>
+            <p id="wynik-komentarz" class="feedback"></p>
+        </div>
+    </section>
+
 </body>
 </html>
